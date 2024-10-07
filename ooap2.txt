@@ -1,0 +1,98 @@
+abstract class LinkedList<T> {
+
+    public const int HEAD_OK = 1;
+    public const int HEAD_ERR = 2; // Список пуст
+
+    public const int TAIL_OK = 1;
+    public const int TAIL_ERR = 2; // Список пуст
+
+    public const int RIGHT_OK = 1;
+    public const int RIGHT_ERR = 2; // Нет элемента справа
+
+    public const int GET_OK = 1;
+    public const int GET_ERR = 2; // Список пуст или элемент справа отсутствует
+
+    public const int PUT_RIGHT_OK = 1;
+    public const int PUT_RIGHT_ERR = 2;
+
+    public const int PUT_LEFT_OK = 1;
+    public const int PUT_LEFT_ERR = 2;
+
+    public const int REMOVE_OK = 1;
+    public const int REMOVE_ERR = 2; // Список пуст или нет текущего элемента
+
+    public const int REPLACE_OK = 1;
+    public const int REPLACE_ERR = 2;
+
+    public const int FIND_OK = 1;
+    public const int FIND_ERR = 2; // Значение не найдено
+
+    public const int ADD_TO_EMPTY_OK = 1;
+    public const int ADD_TO_EMPTY_ERR = 2; // Список не пуст
+
+    // Конструктор
+    public LinkedList<T> LinkedList();
+
+    // Команды (модификация только внутренних переменных)
+
+    // постусловие: курсор установлен на первый узел списка
+    public void head();
+
+    // постусловие: курсор установлен на последний узел списка
+    public void tail();
+
+    // постусловие: курсор сдвинут на один узел вправо
+    public void right();
+
+    // постусловие: текущий узел заменён на новый с заданным значением
+    public void put_right(T value);
+
+    // постусловие: новый узел с заданным значением добавлен перед текущим
+    public void put_left(T value);
+
+    // предусловие: список не пустой
+    // постусловие: текущий узел удалён
+    public void remove();
+
+    // постусловие: список очищен
+    public void clear();
+
+    // постусловие: в пустой список добавлен новый узел
+    public void add_to_empty(T value);
+
+    // постусловие: новый узел добавлен в конец списка
+    public void add_tail(T value);
+
+    // постусловие: значение текущего узла заменено на заданное
+    public void replace(T value);
+
+    // постусловие: курсор установлен на следующий узел с искомым значением
+    public void find(T value);
+
+    // постусловие: удалены все узлы с заданным значением
+    public void remove_all(T value);
+
+    // Запросы (вычисляют значения на основе входных параметров, не изменяет внутренних состояний)
+
+    public T get(); // предусловие: курсор указывает на существующий узел
+
+    public int size();
+
+    public boolean is_head(); // курсор находится в начале списка
+
+    public boolean is_tail(); // курсор находится в конце списка
+
+    public boolean is_value(); // курсор установлен на узел
+
+    // Запросы состояний
+    public int get_head_status();
+    public int get_tail_status();
+    public int get_right_status();
+    public int get_get_status();
+    public int get_put_right_status();
+    public int get_put_left_status();
+    public int get_remove_status();
+    public int get_replace_status();
+    public int get_find_status();
+    public int get_add_to_empty_status();
+}
