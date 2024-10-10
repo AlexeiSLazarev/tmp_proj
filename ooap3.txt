@@ -1,0 +1,51 @@
+abstract class ParentList<T> {
+    public const int HEAD_OK = 1;
+    public const int HEAD_ERR = 2;
+    public const int TAIL_OK = 1;
+    public const int TAIL_ERR = 2;
+    public const int RIGHT_OK = 1;
+    public const int RIGHT_ERR = 2;
+    public const int GET_OK = 1;
+    public const int GET_ERR = 2;
+    public const int PUT_RIGHT_OK = 1;
+    public const int PUT_RIGHT_ERR = 2;
+    public const int PUT_LEFT_OK = 1;
+    public const int PUT_LEFT_ERR = 2;
+    public const int REMOVE_OK = 1;
+    public const int REMOVE_ERR = 2;
+
+    // Общие методы для однонаправленного и двунаправленного списков
+    public abstract void head();
+    public abstract void tail();
+    public abstract void right();
+    public abstract T get();
+    public abstract void put_right(T value);
+    public abstract void put_left(T value);
+    public abstract void remove();
+    public abstract void clear();
+    public abstract int size();
+
+    // Статусы
+    public abstract int get_head_status();
+    public abstract int get_tail_status();
+    public abstract int get_right_status();
+    public abstract int get_get_status();
+    public abstract int get_put_right_status();
+    public abstract int get_put_left_status();
+    public abstract int get_remove_status();
+}
+
+
+class TwoWayList<T> extends ParentList<T> {
+    public const int LEFT_OK = 1;
+    public const int LEFT_ERR = 2;
+
+    
+    public void left() {
+       
+    }
+
+    public int get_left_status() {
+        return LEFT_OK; 
+    }
+}
