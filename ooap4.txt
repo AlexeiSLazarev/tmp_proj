@@ -1,0 +1,26 @@
+abstract class DynArray<T> {
+    // Конструктор
+    public DynArray<T> DynArray();
+
+    // Команды
+    public void append(T value);
+    public void insert(int index, T value);
+    public void remove(int index);
+    public void clear();
+    public void resize(int newSize);
+    public void replace(int index, T value);
+
+    // Запросы
+    public T get(int index);
+    public int size();
+    public int capacity();
+    public bool is_empty();
+
+    // Запросы статусов
+    public int get_append_status();
+    public int get_insert_status();
+    public int get_remove_status();
+    public int get_resize_status();
+    public int get_replace_status();
+    public int get_get_status();
+}
