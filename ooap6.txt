@@ -1,0 +1,45 @@
+abstract class ParentQueue<T> {
+
+  // конструктор
+  public ParentQueue<T> ParentQueue();
+
+  // команды
+  public void enqueue(T value);       // Добавление элемента в конец очереди
+  public void dequeue();              // Удаление элемента из начала очереди
+  public void clear();                // Очистка очереди
+
+  // запросы
+  public T front();                   // Получение первого элемента
+  public T back();                    // Получение последнего элемента
+  public int size();                  // Текущий размер очереди
+  public bool is_empty();             // Проверка, пуста ли очередь
+
+  // запросы статусов
+  public int get_enqueue_status();    // успешно; ошибка
+  public int get_dequeue_status();    // успешно; очередь пуста
+  public int get_front_status();      // успешно; очередь пуста
+  public int get_back_status();       // успешно; очередь пуста
+}
+
+
+abstract class Queue<T> extends ParentQueue<T> {
+
+  public Queue<T> Queue();
+
+}
+
+
+abstract class Deque<T> extends ParentQueue<T> {
+
+  // конструктор
+  public Deque<T> Deque();
+
+  // дополнительные команды для двусторонней очереди
+  public void enqueue_front(T value);   // Добавление элемента в начало
+  public void dequeue_back();           // Удаление элемента из конца
+
+  // запросы статусов для новых команд
+  public int get_enqueue_front_status();  // успешно; ошибка
+  public int get_dequeue_back_status();   // успешно; очередь пуста
+
+}
