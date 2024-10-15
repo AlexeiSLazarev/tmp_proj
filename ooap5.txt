@@ -1,0 +1,37 @@
+abstract class Queue<T> {
+
+  // конструктор
+  // постусловие: создана пустая очередь
+  public Queue<T> Queue();
+
+  // команды
+
+  // постусловие: новый элемент добавлен в конец очереди
+  public void enqueue(T value);
+
+  // предусловие: очередь не пуста
+  // постусловие: первый элемент очереди удалён
+  public void dequeue();
+
+  // постусловие: все элементы очереди удалены
+  public void clear();
+
+
+  // запросы
+
+  // предусловие: очередь не пуста
+  public T front(); // возвращает первый элемент очереди
+
+  // предусловие: очередь не пуста
+  public T back(); // возвращает последний элемент очереди
+
+  public int size(); // возвращает текущее количество элементов в очереди
+
+  public bool is_empty(); // возвращает true, если очередь пуста
+
+  // запросы статусов 
+  public int get_enqueue_status();
+  public int get_dequeue_status();
+  public int get_front_status();
+  public int get_back_status();
+}
