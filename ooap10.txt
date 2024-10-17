@@ -1,0 +1,23 @@
+abstract class BloomFilter<T> {
+
+  // Конструктор
+  // постусловие: создан пустой фильтр Блюма с указанной ёмкостью и количеством хэш-функций
+  public BloomFilter<T> BloomFilter(int size, int hashFunctionsCount);
+
+  // Команды
+
+  // постусловие: элемент добавлен в фильтр Блюма
+  public void add(T value);
+
+  // Запросы
+
+  // постусловие: возвращает true, если элемент может быть в фильтре, с возможностью ложноположительного срабатывания
+  public boolean mightContain(T value);
+
+  // постусловие: возвращает текущее количество элементов, добавленных в фильтр
+  public int size();
+
+  // Запросы статусов
+  public int get_add_status();       // успешно; ошибка
+  public int get_mightContain_status(); // успешно
+}
